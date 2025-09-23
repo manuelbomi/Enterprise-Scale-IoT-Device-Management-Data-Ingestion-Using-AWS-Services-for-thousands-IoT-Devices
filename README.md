@@ -7,7 +7,20 @@
 #### The repo also includes scripts (Python + AWS IoT Device SDK v2) and templates to organize/group devices and validate the pipeline.
 
 ### High-Level Objectives
-The high level objects include:
-    1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
-    2. Publish sensor data to AWS IoT Core, using MQTT topics per device/group
-    3. Ingest, transform, and store data (e.g., in S3) for downstream processing
+#### The high level objects include:
+  
+   •  1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
+   •  2. Publish sensor data to AWS IoT Core, using MQTT topics per device/group
+   •  3. Ingest, transform, and store data (e.g., in S3) for downstream processing
+ 
+#### The following are the important components of dbt
+    • Models: 
+      SQL queries that define your data transformations. These are the heart of your dbt project.
+    • Sources: 
+      Declarations of your raw data tables in your data warehouse that dbt can reference.
+    • Tests: 
+      SQL queries or YAML configurations to validate the quality and integrity of your data.
+    • Macros: 
+      Reusable Jinja code snippets that can be embedded within your SQL models for dynamic logic.
+    • Seeds: 
+      Small CSV files used to load static data into your data warehouse for testing or reference.
