@@ -1,6 +1,8 @@
-# Enterprise-Scale IoT Device Management & Data Ingestion Using AWS Services for 200+ Devices (Sensors, RFID, Raspberry Pis) 
+# Enterprise-Scale IoT Device Management & Data Ingestion Using AWS Services for 10K+ Devices (Sensors, RFID, Raspberry Pis) 
 
-#### This repository contains a complete, repeatable structure and scripts to automatically provision, onboard, simulate, and ingest data from a heterogeneous fleet of IoT devices (100+ devices grouped into logical groups). 
+#### This repository contains a complete, repeatable structure and scripts to automatically provision, onboard, simulate, and ingest data from a heterogeneous fleet of IoT devices. 
+
+#### To start with, we are considering about 200 heterogenous IoT devices that are grouped into logical groups. Without loss of generality, our approach here is scalable to tens of thousands IoT/IIoT devices.  
 
 #### It uses AWS IoT Core, AWS IoT Device Management (Fleet Provisioning), IoT Rules, and AWS storage services (S3) to route and persist telemetry. 
 
@@ -13,9 +15,8 @@
    •  2. Publish sensor data to AWS IoT Core, using MQTT topics per device/group
    •  3. Ingest, transform, and store data (e.g., in S3) for downstream processing
  
-#### The following are the important components of dbt
-    • Models: 
-      SQL queries that define your data transformations. These are the heart of your dbt project.
+#### The high level objects include:
+    • 1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
     • Sources: 
       Declarations of your raw data tables in your data warehouse that dbt can reference.
     • Tests: 
