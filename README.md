@@ -1,1 +1,13 @@
-# Enterprise-Scale-IoT-Device-Management-Data-Ingestion-Using-AWS-Services-for-200-Devices
+# Enterprise-Scale IoT Device Management & Data Ingestion Using AWS Services for 200+ Devices (Sensors, RFID, Raspberry Pis) 
+
+#### This repository contains a complete, repeatable structure and scripts to automatically provision, onboard, simulate, and ingest data from a heterogeneous fleet of IoT devices (100+ devices grouped into logical groups). 
+
+#### It uses AWS IoT Core, AWS IoT Device Management (Fleet Provisioning), IoT Rules, and AWS storage services (S3) to route and persist telemetry. 
+
+#### The repo also includes scripts (Python + AWS IoT Device SDK v2) and templates to organize/group devices and validate the pipeline.
+
+### High-Level Objectives
+The high level objects include:
+    1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
+    2. Publish sensor data to AWS IoT Core, using MQTT topics per device/group
+    3. Ingest, transform, and store data (e.g., in S3) for downstream processing
