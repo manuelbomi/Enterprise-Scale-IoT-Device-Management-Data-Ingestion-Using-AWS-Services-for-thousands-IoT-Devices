@@ -139,7 +139,7 @@ Each device or gateway will be flashed with:
     
     • A serial number or other unique ID
 
-<ins>Sample provision_device.py (run on each device/gateway) </ins>
+##### Sample provision_device.py (run on each device/gateway) 
 ---
 ```ruby
 
@@ -187,6 +187,44 @@ mqtt_connection.disconnect().result()
 ---
 
 
+
+### STEP 5: MQTT Data Publishing (Device → AWS)
+
+After provisioning, device can use saved certs to connect securely and publish MQTT messages:
+
+---
+```ruby
+
+mqtt_connection = mqtt_connection_builder.mtls_from_path(
+    endpoint=ENDPOINT,
+    cert_filepath="device_cert.pem",
+    pri_key_filepath="device_key.pem",
+    ca_filepath=ROOT_CA,
+    client_id=DEVICE_SERIAL,
+    clean_session=False,
+    keep_alive_secs=60
+)
+
+mqtt_connection.connect().result()
+
+payload = {
+    "device_id": DEVICE_SERIAL,
+    "timestamp": int(time.time() * 1000),
+    "sensor_data": {
+        "temperature": 22.5,
+        "humidity": 55.0
+    }
+}
+
+mqtt_connection.publish(
+    topic=f"iot/{DEVICE_GROUP}/{DEVICE_SERIAL}/data",
+    payload=json.dumps(payload),
+    qos=mqtt.QoS.AT_LEAST_ONCE
+)
+
+
+```
+---
 
 
 
