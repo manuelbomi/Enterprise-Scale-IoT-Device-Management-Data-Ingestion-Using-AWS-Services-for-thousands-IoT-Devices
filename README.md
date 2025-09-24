@@ -234,6 +234,37 @@ Example SQL Rule:
 SELECT * FROM 'iot/group1/+/data'
 ```
 
+Create rule: 
+
+```ruby
+aws iot create-topic-rule \
+  --rule-name "group1_data_to_s3" \
+  --topic-rule-payload '{
+    "sql": "SELECT * FROM \"iot/group1/+/data\"",
+    "ruleDisabled": false,
+    "actions": [{
+      "s3": {
+        "roleArn": "arn:aws:iam::your-account-id:role/iot_s3_role",
+        "bucketName": "your-iot-data-bucket",
+        "key": "${topic()}/${timestamp()}.json"
+      }
+    }]
+  }'
+
+```
+
+Ensure that:
+    • You have an IAM role with iot.amazonaws.com as principal
+    
+    • Role has write access to the bucket
+
+---
+
+### STEP 7: Group Devices and Manage via IoT Device Management
+
+Once devices are onboarded:
+
+    • Add each Thing to a Thing Group:
 
 
 
