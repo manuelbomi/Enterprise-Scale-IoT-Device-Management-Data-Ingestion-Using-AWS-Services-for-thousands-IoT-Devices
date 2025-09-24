@@ -26,6 +26,16 @@
 |IoT Policy Created | For MQTT access | 
 | S3 Bucket Created | To store device data |
 |AWS CLI + Python SDK Installed |On your provisioning computer or edge gateway |
+
+### STEP 1: Define Your Device Fleet and Groups
+| Group | Type | Count | Description| 
+|---|---|
+| group1 | Temperature Monitors | 40 |Sensor nodes in cold storage| 
+| group2 |Industrial Vibration Sensors |30 | Motors & heavy machinery| 
+|group3 | RFID Tags/Readers | 30 | Asset tracking| 
+| group4 | Raspberry Pi Nodes |40 | Edge compute and cameras | 
+|group5 |Smart Meters / Power Sensors |30 | Grid and power usage | 
+|group6 |Environmental Sensors |30 | Humidity, CO2, pressure | 
   
   
 
