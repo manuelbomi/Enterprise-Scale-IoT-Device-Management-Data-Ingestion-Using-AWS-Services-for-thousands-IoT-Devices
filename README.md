@@ -226,6 +226,14 @@ mqtt_connection.publish(
 ```
 ---
 
+### STEP 6: Create AWS IoT Rules to Forward MQTT to S3 (i.e. subscription from MQTT to S3 Bucket)
+
+Example SQL Rule:
+
+```ruby
+SELECT * FROM 'iot/group1/+/data'
+```
+
 
 
 
