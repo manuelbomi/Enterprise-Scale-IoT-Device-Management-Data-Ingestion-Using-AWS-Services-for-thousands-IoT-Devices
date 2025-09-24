@@ -23,6 +23,10 @@
 |---|---|
 | AWS IoT Core & IoT Device Management | Use AWS Console/CLI | 
 | AWS IoT Fleet Provisioning Enabled | For bulk onboarding |
+|IoT Policy Created | For MQTT access | 
+| S3 Bucket Created | To store device data |
+|AWS CLI + Python SDK Installed |On your provisioning computer or edge gateway |
+  
   
 
    
