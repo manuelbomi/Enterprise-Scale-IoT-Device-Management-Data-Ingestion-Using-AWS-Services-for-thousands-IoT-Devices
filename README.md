@@ -139,6 +139,53 @@ Each device or gateway will be flashed with:
     
     • A serial number or other unique ID
 
+<ins>Sample provision_device.py (run on each device/gateway) </ins>
+---
+```ruby
+
+import json, time, uuid
+from awscrt import io, mqtt
+from awsiot import iotidentity, mqtt_connection_builder
+
+# --- CONFIGURATION ---
+TEMPLATE_NAME = "group1_template"   # Change per group
+DEVICE_SERIAL = "temp-001"          # Unique ID
+ENDPOINT = "xxxxxx-ats.iot.us-west-2.amazonaws.com"
+CERT = "claim_cert.pem"
+KEY = "claim_private_key.pem"
+ROOT_CA = "AmazonRootCA1.pem"
+
+mqtt_connection = mqtt_connection_builder.mtls_from_path(
+    endpoint=ENDPOINT,
+    cert_filepath=CERT,
+    pri_key_filepath=KEY,
+    ca_filepath=ROOT_CA,
+    client_id=f"client-{DEVICE_SERIAL}",
+    clean_session=True,
+    keep_alive_secs=30
+)
+
+mqtt_connection.connect().result()
+identity_client = iotidentity.IotIdentityClient(mqtt_connection)
+
+# --- Register Device ---
+certs = identity_client.create_keys_and_certificate().result()
+register = identity_client.register_thing(
+    template_name=TEMPLATE_NAME,
+    parameters={"SerialNumber": DEVICE_SERIAL},
+    certificate_ownership_token=certs.certificate_ownership_token
+).result()
+
+# --- Store New Certs ---
+with open("device_cert.pem", "w") as f: f.write(certs.certificate_pem)
+with open("device_key.pem", "w") as f: f.write(certs.private_key)
+print(f"[✔] {DEVICE_SERIAL} registered as {register.thing_name}")
+
+mqtt_connection.disconnect().result()
+
+```
+---
+
 
 
 
