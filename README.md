@@ -8,7 +8,7 @@
 
 #### The repo also includes scripts (Python + AWS IoT Device SDK v2) and templates to organize/group devices and validate the pipeline.
 
-### High-Level Objectives
+### <ins>High-Level Objectives</ins>
 
 #### The high level objectives include:
     • 1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
