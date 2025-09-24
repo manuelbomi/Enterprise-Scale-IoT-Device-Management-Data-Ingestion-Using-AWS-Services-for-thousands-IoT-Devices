@@ -46,7 +46,8 @@ For example:
     • IoT Policy
 
 ### STEP 2: Create a Global IoT Policy
-Create a policy GenericIoTPolicy allowing MQTT access:
+Create a policy (e.g. GenericIoTPolicy) allowing MQTT access:
+
 ---
 ```ruby
 {
@@ -72,6 +73,59 @@ aws iot create-policy \
 
 ```
 ---
+
+
+### STEP 3: Create Fleet Provisioning Template (1 per Group)
+
+Create one provisioning template per device group (group1_template.json, etc.)
+
+Example for group1:
+
+---
+```ruby
+{
+  "parameters": {
+    "SerialNumber": {
+      "type": "String"
+    }
+  },
+  "resources": {
+    "thing": {
+      "type": "AWS::IoT::Thing",
+      "properties": {
+        "ThingName": {"Fn::Sub": "${SerialNumber}"}
+      }
+    },
+    "certificate": {
+      "type": "AWS::IoT::Certificate",
+      "properties": {
+        "Status": "ACTIVE"
+      }
+    },
+    "policy": {
+      "type": "AWS::IoT::Policy",
+      "properties": {
+        "PolicyName": "GenericIoTPolicy"
+      }
+    }
+  }
+}
+
+```
+---
+
+Create the template for each group: 
+
+```ruby
+aws iot create-provisioning-template \
+  --template-name group1_template \
+  --template-body file://group1_template.json \
+  --enabled
+
+```
+---
+
+Repeat for group2_template, ..., group6_template. 
 
 
 
