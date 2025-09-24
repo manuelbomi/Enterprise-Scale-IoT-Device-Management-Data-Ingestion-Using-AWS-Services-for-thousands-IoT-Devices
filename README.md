@@ -16,22 +16,13 @@
     • 3. Ingest, transform, and store data (e.g., in S3) for downstream processing
 
 ## Step-by-Step Guide for Full Automation of Onboarding the Devices to AWS IoT Core
-#### Requirements
-Description
-✅ AWS IoT Core & IoT Device Management Enabled
-Use AWS Console/CLI
-✅ AWS IoT Fleet Provisioning Enabled
-For bulk onboarding
-✅ IoT Policy Created
-For MQTT access
-✅ S3 Bucket Created
-To store device data
-✅ AWS CLI + Python SDK Installed
-On your provisioning computer or edge gateway
+#### Requirements / Prerequisites
 
-| Header 1 | Header 2 | Header 3 |
-|---|---|---|
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+
+| Requirements | Description| 
+|---|---|
+| AWS IoT Core & IoT Device Management | Use AWS Console/CLI | 
+| AWS IoT Fleet Provisioning Enabled | For bulk onboarding |
+  
 
    
