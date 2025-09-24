@@ -29,7 +29,7 @@
 
 ### STEP 1: Define Your Device Fleet and Groups
 | Group | Type | Count | Description| 
-|---|---|
+|---|---|---|---|
 | group1 | Temperature Monitors | 40 |Sensor nodes in cold storage| 
 | group2 |Industrial Vibration Sensors |30 | Motors & heavy machinery| 
 |group3 | RFID Tags/Readers | 30 | Asset tracking| 
