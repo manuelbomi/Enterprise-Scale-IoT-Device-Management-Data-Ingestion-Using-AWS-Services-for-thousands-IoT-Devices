@@ -127,6 +127,15 @@ aws iot create-provisioning-template \
 
 Repeat for group2_template, ..., group6_template. 
 
+---
+
+### STEP 4: Flash Devices with Python Provisioning Script + Claim Cert
+
+Each device or gateway will be flashed with:
+    • A claim certificate + private key + root CA
+    • A Python provisioning script
+    • A serial number or other unique ID
+
 
 
 
