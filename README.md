@@ -254,6 +254,7 @@ aws iot create-topic-rule \
 ```
 
 Ensure that:
+
     • You have an IAM role with iot.amazonaws.com as principal
     
     • Role has write access to the bucket
@@ -265,6 +266,61 @@ Ensure that:
 Once devices are onboarded:
 
     • Add each Thing to a Thing Group:
+
+
+```ruby
+
+aws iot add-thing-to-thing-group \
+  --thing-name "temp-001" \
+  --thing-group-name "group1"
+
+```
+
+#### You can then use AWS IoT Jobs to:
+
+* Send OTA updates
+
+* Restart or configure devices
+
+* Pull logs or change sampling rates
+
+### Final Result
+
+| Element | Description| 
+|---|---|
+| Device Auto-Onboarding | Via provisioning script on boot | 
+| Secure Authentication |X.509 certs via Fleet Provisioning |
+|MQTT Messaging | Per device/topic structure | 
+| Device Grouping | IoT Thing Groups|
+|Data Storage |AWS IoT Rule to S3 |
+|Fleet Management |AWS IoT Device Management |
+
+
+
+
+---
+
+
+
+### **AUTHOR'S BACKGROUND**
+### Author's Name:  Emmanuel Oyekanlu
+```
+Skillset:   I have experience spanning several years in data science, developing scalable enterprise data pipelines,
+enterprise solution architecture, architecting enterprise systems data and AI applications,
+software and AI solution design and deployments, data engineering, high performance computing (GPU, CUDA), machine learning,
+NLP, Agentic-AI and LLM applications as well as deploying scalable solutions (apps) on-prem and in the cloud.
+
+I can be reached through: manuelbomi@yahoo.com
+
+Websites (professional):  http://emmanueloyekanlu.com/
+Websites (application):  https://app.emmanueloyekanluprojects.com/
+Publications:  https://scholar.google.com/citations?user=S-jTMfkAAAAJ&hl=en
+LinkedIn:  https://www.linkedin.com/in/emmanuel-oyekanlu-6ba98616
+Github:  https://github.com/manuelbomi
+
+```
+[![Icons](https://skillicons.dev/icons?i=aws,azure,gcp,scala,mongodb,redis,cassandra,kafka,anaconda,matlab,nodejs,django,py,c,anaconda,git,github,mysql,docker,kubernetes&theme=dark)](https://skillicons.dev)
+
 
 
 
