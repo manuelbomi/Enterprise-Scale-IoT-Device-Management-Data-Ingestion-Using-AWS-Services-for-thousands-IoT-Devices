@@ -14,4 +14,19 @@
     • 1. Automatically onboard 200+ devices (industrial sensors, RFID readers, Raspberry Pis, etc.) grouped into 6 categories
     • 2. Publish sensor data to AWS IoT Core, using MQTT topics per device/group
     • 3. Ingest, transform, and store data (e.g., in S3) for downstream processing
+
+## Step-by-Step Guide for Full Automation of Onboarding the Devices to AWS IoT Core
+#### Requirements
+Description
+✅ AWS IoT Core & IoT Device Management Enabled
+Use AWS Console/CLI
+✅ AWS IoT Fleet Provisioning Enabled
+For bulk onboarding
+✅ IoT Policy Created
+For MQTT access
+✅ S3 Bucket Created
+To store device data
+✅ AWS CLI + Python SDK Installed
+On your provisioning computer or edge gateway
+
    
