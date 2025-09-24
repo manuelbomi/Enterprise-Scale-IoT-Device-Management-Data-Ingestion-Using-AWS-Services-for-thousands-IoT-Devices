@@ -28,6 +28,8 @@
 |AWS CLI + Python SDK Installed |On your provisioning computer or edge gateway |
 
 ### STEP 1: Define Your Device Fleet and Groups
+For example:
+
 | Group | Type | Count | Description| 
 |---|---|---|---|
 | group1 | Temperature Monitors | 40 |Sensor nodes in cold storage| 
@@ -36,6 +38,12 @@
 | group4 | Raspberry Pi Nodes |40 | Edge compute and cameras | 
 |group5 |Smart Meters / Power Sensors |30 | Grid and power usage | 
 |group6 |Environmental Sensors |30 | Humidity, CO2, pressure | 
+
+#### Each group will have its own:
+    • Thing Group
+    • Fleet Provisioning Template
+    • Topic structure for MQTT (iot/group1/device_id/data)
+    • IoT Policy
   
   
 
