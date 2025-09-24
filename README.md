@@ -44,6 +44,29 @@ For example:
     • Fleet Provisioning Template
     • Topic structure for MQTT (iot/group1/device_id/data)
     • IoT Policy
+
+### STEP 2: Create a Global IoT Policy
+Create a policy GenericIoTPolicy allowing MQTT access:
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": [
+      "iot:Connect",
+      "iot:Publish",
+      "iot:Subscribe",
+      "iot:Receive",
+      "iot:GetThingShadow",
+      "iot:UpdateThingShadow"
+    ],
+    "Resource": "*"
+  }]
+}
+
+
+aws iot create-policy \
+  --policy-name GenericIoTPolicy \
+  --policy-document file://iot_policy.json
   
   
 
