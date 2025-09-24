@@ -47,6 +47,8 @@ For example:
 
 ### STEP 2: Create a Global IoT Policy
 Create a policy GenericIoTPolicy allowing MQTT access:
+---
+```ruby
 {
   "Version": "2012-10-17",
   "Statement": [{
@@ -67,6 +69,15 @@ Create a policy GenericIoTPolicy allowing MQTT access:
 aws iot create-policy \
   --policy-name GenericIoTPolicy \
   --policy-document file://iot_policy.json
+
+```
+---
+
+
+
+
+
+
   
   
 
