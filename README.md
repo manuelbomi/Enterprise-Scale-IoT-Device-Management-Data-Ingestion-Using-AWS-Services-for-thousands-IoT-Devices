@@ -8,6 +8,8 @@
 
 #### The repo also includes scripts (Python + AWS IoT Device SDK v2) and templates to organize/group devices and validate the pipeline.
 
+#### Other examples and IoT/IIoT use cases are available here:   https://github.com/manuelbomi/Enterprise-Scale-IoT-IIoT-Device-Management-Data-Analytics-Pipeline-for-10k-plus-Edge-Devices
+
 ### <ins>High-Level Objectives</ins>
 
 #### The high level objectives include:
