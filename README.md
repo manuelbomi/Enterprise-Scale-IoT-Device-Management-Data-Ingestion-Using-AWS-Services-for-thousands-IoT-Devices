@@ -309,7 +309,7 @@ aws iot add-thing-to-thing-group \
 ```
 Skillset:   I have experience spanning several years in data science, developing scalable enterprise data pipelines,
 enterprise solution architecture, architecting enterprise systems data and AI applications,
-software and AI solution design and deployments, data engineering, high performance computing (GPU, CUDA), machine learning,
+software and AI solution design and deployments, data engineering, high performance computing (GPU, CUDA), IoT applications, machine learning,
 NLP, Agentic-AI and LLM applications as well as deploying scalable solutions (apps) on-prem and in the cloud.
 
 I can be reached through: manuelbomi@yahoo.com
